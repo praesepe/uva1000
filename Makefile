@@ -7,7 +7,7 @@ ANSWER := $(SOURCE_DIR)/answer
 
 CXX := g++
 LDFLAGS := $(LDFLAGS) -lm #-lcrypt
-CXXFLAGS := $(CXXFLAGS) -Wall -g -O2 -std=c++11 -pipe -DONLINE_JUDGE -I/usr/local/opt/openssl/include
+CXXFLAGS := $(CXXFLAGS) -Wall -g -O2 -std=c++11 -pipe -DONLINE_JUDGE
 
 .PHONY: run all clean
 
