@@ -27,4 +27,4 @@ $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $<
 
 clean:
-	@rm $(TARGET)
+	@rm $(TARGET) $(OUTPUT)
