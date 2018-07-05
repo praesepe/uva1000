@@ -24,7 +24,7 @@ run: $(TARGET)
 
 $(TARGET): $(SRC)
 	@echo "\033[1;33m> Build $@ \033[0m"
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $<
+	@$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $<
 
 clean:
 	@rm $(TARGET) $(OUTPUT)
