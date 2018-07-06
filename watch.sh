@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 while [ true ]; do
-    fswatch --one-event -E */*.cpp | (while read source; do SOURCE=$source make run; done)
+    fswatch --one-event . | (while read source; do
+        if echo $source | egrep '\.cpp$' > /dev/null; then
+            SOURCE=$source make run
+        fi
+    done)
     if [ $? = "130" ]; then
         break;
     fi
