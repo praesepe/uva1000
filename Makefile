@@ -5,7 +5,12 @@ SOURCE_DIR := $(shell dirname $(realpath $(SOURCE)))
 INPUT := $(SOURCE_DIR)/input
 ANSWER := $(SOURCE_DIR)/answer
 
-CXX := g++
+ifneq ($(shell which g++-8),)
+	CXX := g++-8
+else
+	CXX := g++
+endif
+
 LDFLAGS := $(LDFLAGS) -lm #-lcrypt
 CXXFLAGS := $(CXXFLAGS) -Wall -g -O2 -std=c++11 -pipe -DONLINE_JUDGE
 
