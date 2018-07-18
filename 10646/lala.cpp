@@ -7,15 +7,15 @@ int main() {
     cin >> cases;
 
     for (size_t i = 1; i <= cases; i++) {
-        vector<string> piles(52, "");
-        for (size_t j = 0; j < 52; j++) {
+        vector<string> piles(53, "");
+        for (size_t j = 1; j <= 52; j++) {
             string card;
             cin >> card;
             piles[j] = card;
         }
 
         int Y = 0;
-        int pos = 26;
+        int pos = 27;
         for (size_t j = 0; j < 3; j++) {
             char rank = piles[pos][0];
             if ('2' <= rank && rank <= '9') {
@@ -28,7 +28,7 @@ int main() {
             }
         }
 
-        string result = Y - 1 <= pos ? piles[Y - 1] : piles[26 + (Y - pos - 1)];
+        string result = Y <= pos ? piles[Y] : piles[27 + Y - pos];
         cout << "Case " << i << ": " << result << endl;
     }
 
